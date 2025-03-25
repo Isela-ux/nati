@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parroquia La Natividad de María</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+        }
+        header {
+            background-color: #00bcd4;
+            padding: 15px;
+            color: white;
+            font-size: 40px;
+            font-family: 'Great Vibes', cursive;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .direccion {
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        .content {
+            background-image: url('https://scontent.fntr4-1.fna.fbcdn.net/v/t39.30808-6/476116559_957753793208060_1960563804586525651_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=Ytg4IWz7QBUQ7kNvgH6bFRg&_nc_oc=AdhVkTHA7CGbjAVkkxB6hD81_uT215fF9GflAJL0DP01LSZJ7Ojw1eZ2lypj08gIoo0&_nc_zt=23&_nc_ht=scontent.fntr4-1.fna&_nc_gid=ktK-xW8GTRt8jWEtPPgwCQ&oh=00_AYHBZN5aTqmC-yuzA1iXWig6xCVzWNg5oMPP21oZ6ttWBA&oe=67DE75E7');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            margin-top: 120px;
+        }
+        .descripcion {
+            position: relative;
+            z-index: 1;
+            color: white;
+            font-size: 22px;
+            margin-top: 20px;
+            padding: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+        }
+        .horarios {
+            position: relative;
+            z-index: 1;
+            color: white;
+            font-size: 22px;
+            margin-top: 20px;
+            padding: 20px;
+            text-align: left;
+            margin-left: 50px;
+            max-width: 300px;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+        }
+        .horario {
+            background-color: #00bcd4;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>Parroquia La Natividad de María</div>
+        <div class="direccion">DIRECCIÓN: Miguel Hidalgo esq. Ramón Mendoza 86690</div>
+    </header>
+    <div class="content">
+        <div class="descripcion">
+            Bienvenidos a la Parroquia La Natividad de María, un espacio de fe, comunidad y servicio.
+            Aquí encontrarás información sobre nuestras misas, eventos y actividades religiosas.
+        </div>
+        <div class="horarios">
+            <h3>Horarios de misas</h3>
+            <div class="horario">Martes - 7:00 PM</div>
+            <div class="horario">Jueves - 7:00 PM</div>
+            <div class="horario">Domingo - 8:00 AM, 10:00 AM, 12:00 PM</div>
+        </div>
+    </div>
+</body>
+</html>
