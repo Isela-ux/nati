@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parroquia La Natividad de María</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Cargando Font Awesome -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        /* Barra izquierda */
+        .sidebar {
+            width: 250px;
+            background-color: #007b8f;
+            color: white;
+            padding: 20px;
+            text-align: left;
+            position: fixed;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            overflow: visible;
+        }
+
+        .sidebar h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .facebook-link {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .facebook-link img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .facebook-link a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* Correo con ícono */
+        .correo-link {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .correo-link i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        /* Imagen destacada que se puede ampliar */
+        .imagen-destacada {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            margin-left: -50px;
+            z-index: 10;
+            cursor: pointer; /* Aparece como un puntero de clic */
+        }
+
+        .imagen-destacada img {
+            width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .imagen-destacada h4 {
+            color: #ffffff;
+            font-size: 16px;
+            margin: 0 0 10px 0;
+            font-family: 'Great Vibes', cursive;
+            text-align: center;
+        }
+
+        .imagen-destacada a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .imagen-destacada a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Contenido principal */
+        .main-content {
+            margin-left: 250px;
+            width: calc(100% - 250px);
+            position: relative;
+        }
+
+        header {
+            background-color: #00bcd4;
+            padding: 20px;
+            color: white;
+            font-size: 40px;
+            font-family: 'Great Vibes', cursive;
+            position: fixed;
+            top: 0;
+            width: calc(100% - 250px);
+            z-index: 2;
+            left: 250px;
+        }
+
+        .content {
+            background-image: url('imagenes/parroquia.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            top: 80px;
+            padding-top: 50px;
+            z-index: 1;
+            
+        }
+
+        .descripcion {
+            position: relative;
+            z-index: 1;
+            color: white;
+            font-size: 22px;
+            margin-top: 20px;
+            padding: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .horarios {
+            position: relative;
+            z-index: 1;
+            color: white;
+            font-size: 22px;
+            margin-top: 20px;
+            padding: 20px;
+            text-align: left;
+            margin-left: 50px;
+            max-width: 300px;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .horario {
+            background-color: #00bcd4;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>DIRECCIÓN</h3>
+        <p><a href="https://maps.app.goo.gl/g93AFpbCb1Khx1Ef9" target="_blank" style="color: white;">Miguel Hidalgo esq. Ramón Mendoza, 86690</a></p>
+        <div class="facebook-link">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            <a href="https://www.facebook.com/share/165iCNUT3k/" target="_blank">Visítanos en Facebook</a>
+        </div>
+
+        <!-- Correo con ícono -->
+        <div class="correo-link">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:parroquia_19@outlook.es" style="color: white;">parroquia_19@outlook.es</a>
+        </div>
+
+        <!-- Imagen destacada que se puede ampliar -->
+        <div class="imagen-destacada" onclick="openModal();">
+            <h4>Fundación de Cunduacán</h4>
+            <img src="imagenes/virgen.jpeg">
+            <a href="https://detabascosoy.com/parroquia-de-la-natividad-de-maria-cunduacan/" target="_blank">Ver más detalles</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            Parroquia La Natividad de María
+        </header>
+
+        <div class="content">
+            <div class="descripcion">
+                Bienvenidos a la Parroquia La Natividad de María, donde nos encontramos para celebrar la fe, la comunidad y los valores cristianos. Únete a nosotros en nuestras misas, eventos y actividades parroquiales.
+            </div>
+
+            <div class="horarios">
+                <div class="horario">Misas: Martes - Jueves a las 7:00 PM</div>
+                <div class="horario">Domingo: 8:00 AM, 10:00 ,12:00 PM y 07:00 PM</div>
+                <div class="horario">Confesiones: Martes Y Jueves 10:00 AM</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de imagen -->
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal();">&times;</span>
+        <div class="modal-content">
+            <img src="imagenes/virgen.jpeg">
+        </div>
+    </div>
+
+    <script>
+        // Función para abrir el modal
+        function openModal() {
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
